@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENT ME NOW</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+    <div class="header">
+
+        <div><img src="./pics/LOOGO.png" alt="logo rent " class="logo"></div>
+        <nav class="nav_">
+
+            <ul class="nav_liste">
+                <li><a class="active" href="home.html"> home </a></li>
+                <li><a href="gallery.html"> Gallery </a></li>
+                <li><a href=""> Booking </a></li>
+                <li><a href="contact.html"> contact </a></li>
+                <!-- <li><a href=""> about </a></li> -->
+
+            </ul>
+
+        </nav>
+
+        <div class="menu">
+            <div class="line1"></div>
+            <div class="line1"></div>
+            <div class="line1"></div>
+        </div>
+    </div>
+    <section class="reserver">
+        <div class="h1"><H1>Booking</H1> </div><hr class="bruh">
+        
+        
+        <section class="container">
+        
+            <form >
+                <p class="label">Choose the type of the vehicle </p>
+                <select id="list-test">
+                    <option value="moto">Motorcycle</option>
+                    <option value="cars">Cars</option>
+                    <option value="camion">Trucks</option>
+                    <option value="engine">Construction Machine</option>
+                    <option value="" style="display: none;" selected>Choose</option>
+                </select>
+                <p class="label">vehicles available</p>
+                <select id="seconde-select">
+                    <option></option>
+                </select>
+            <div id="inputs">
+
+                <div id="fuel-select">
+                    <input type="radio" id="Diesel" name="fuel-type" > Diesel</input>
+                </div>
+                <div id="fuel-select2">
+                    <input type="radio" id="Essance" name="fuel-type" checked>  Essance</input>
+                </div>
+                <div id="fuel-select3">
+                    <input type="radio" id="Hybride" name="fuel-type"> Hybride</input>
+                </div>
+                <div id="fuel-select4">
+                    <input type="radio" id="Electrique" name="fuel-type"> Electrique</input>
+                </div>
+            </div>
+
+                <input type="number" id="myNumber" min="1" max="60" placeholder="0">
+                <div id="submit">
+                    <button type="button" onclick="calcule()"> 
+                        Submit
+                    </button>
+                </div>
+    
+            </form>
+            <div class="hidden-img">
+            
+                <img src="" id="img" alt="">
+        
+            </div>
+        </section>
+       
+        <div id="popup">
+            <div id="small-container" >
+            <div id="true"></div>
+            <p class="choice">Confirmed </p>
+            <div id="fuel-choice">  </div>
+            <div id="day-numbre"> </div>
+
+            <div id="final-msg"> </div>
+            <div id="ok-button">
+                <button onclick="hide()"> DONE
+                </button>
+
+            </div>
+        </div>
+
+        </div>
+        
+ 
+    </section>
+
+    
+    <footer>
+        <div class="ftr-container">
+            <div class="text-ftr">
+                <p>Terms & Conditions </p>
+                <p class="brr">Privacy policy </p></div>
+            <div class="img-ftr">
+                <a href="https://www.instagram.com/"><img src="./pics/instagram.png" alt="instagram"></a>
+                <a href="https://twitter.com/?lang=fr"><img src="./pics/twitter.png" alt="twitter"></a>
+                <a href="https://web.facebook.com/"><img src="./pics/facebook.png" alt="facebook"></a>
+                <a href="https://fr.linkedin.com/"><img src="./pics/linkedin.png" alt="linkedin"></a>
+            </div>
+        </div>
+                
+            
+        </footer>
+    
+    <script>
+
+        let firstSelect = document.getElementById("list-test");
+        let secondeSelect = document.getElementById("seconde-select");
+
+        let motors = ["KYMCO VITALITY 50", "KYMCO AGILITY 125", "Kymco Xciting 400"];
+        let cars = ["citroin C3", "sonata hybrid", "Audi-A5", "Renault express van"];
+        let engins = ["XCMG LW400KN", "Drum_roller"];
+        let camions = ["Scania P340n"];
+
+        let imgMotors =['./pics/KYMCO VITALITY 50.jpg','./pics/KYMCO AGILITY 125.jpg','./pics/Kymco-Xciting-400.jpg'];
+        let imgCars=['./pics/citroin c 3.jpg','./pics/sonata hybrid.webp','./pics/Audi-A5-Right-Front-Three-Quarter-165509.webp','./pics/Renault express van.png'];
+        let imgCamions=['./pics/scania P340.jpg'];
+        let imgEngins=['./pics/XCMG LW400KN.jpg','./pics/br_drum_roller.jpg'];
+
+
+        firstSelect.addEventListener("change", function () {
+            selected();
+        });
+        function selected() {
+            let a = firstSelect.value;
+            if (a === "moto") {
+                Array = motors;
+            } else if (a === "cars")
+                Array = cars;
+            else if (a === 'camion')
+                Array = camions;
+            else if (a === 'engine')
+                Array = engins;
+            var code = "";
+            for (i = 0; i < Array.length; i++) {
+                code +=  `<option value="${Array[i]}" > ${Array[i]} </option>`;
+                // code = code + "<option value="+ Array[i] +" > "+ Array[i] + "</option>";
+            }
+            code +=  '<option value="" style="display: none;" selected>Choose</option>';
+            code = "<select>" + code + "</select>";
+            secondeSelect.innerHTML = code;
+        }
+        secondeSelect.addEventListener("change", function () {
+            selected_img();
+        });
+        function selected_img() {
+            let fs = firstSelect.value;
+            let ss = secondeSelect.value;
+            let img = document.getElementById("img");
+            img.classList.add("img-shower");
+            console.log(ss);
+            if (fs === 'moto') {
+                for (let i = 0; i < motors.length; i++) {  
+                    if (motors[i] === ss) {
+                        img.src = imgMotors[i];
+                    }
+                    
+                }
+                
+            } else if (fs === 'cars') {
+                for (let i = 0; i < cars.length; i++) {  
+                    if (cars[i] === ss) {
+                        img.src = imgCars[i];
+                    }
+                }
+                
+            }else if(fs === 'camion') {
+                for (let i = 0; i < camions.length; i++) {  
+                    if (camions[i] === ss) {
+                        img.src = imgCamions[i];
+                    }
+                }
+                
+            }else{
+                for (let i = 0; i < engins.length; i++) {  
+                    if (engins[i] === ss) {
+                        img.src = imgEngins[i];
+                    }
+                }
+
+            }
+            
+        }
+        secondeSelect.addEventListener("change", function (){
+        fuel_types()
+        });
+        function fuel_types() {
+            let ss = secondeSelect.value;
+            let fs = firstSelect.value;
+            // let fuelSelect=document.getElementById('fuel-select')
+
+            if (fs==='camion'||ss==="Renault express van") {
+                document.getElementById("fuel-select").style.display="block";
+                document.getElementById("Diesel").checked=true;
+                document.getElementById("fuel-select2").style.display="none";
+                document.getElementById("fuel-select3").style.display="none";
+                document.getElementById("fuel-select4").style.display="none";
+            }
+            else if (fs==='moto') {
+               
+                document.getElementById("fuel-select4").style.display="block";
+                document.getElementById("fuel-select4").checked=true;
+                document.getElementById("fuel-select2").style.display="block";
+                document.getElementById("fuel-select").style.display="none";
+                document.getElementById("fuel-select3").style.display="none";
+            }
+            else if (fs==='engine') {
+               
+               document.getElementById("fuel-select").style.display="block";
+               document.getElementById("fuel-select2").style.display="block";
+               document.getElementById("fuel-select3").style.display="none";
+               document.getElementById("fuel-select4").style.display="none";
+           }
+           else {
+               
+               if (ss==="citroin C3") {
+                document.getElementById("fuel-select").style.display="block";
+                document.getElementById("fuel-select2").style.display="block";
+                document.getElementById("fuel-select3").style.display="block";
+                document.getElementById("fuel-select4").style.display="block";
+               }
+               else if (ss==="sonata hybrid"||ss==="Audi-A5"){
+                document.getElementById("fuel-select").style.display="block";
+                document.getElementById("fuel-select2").style.display="block";
+                document.getElementById("fuel-select3").style.display="block";
+                document.getElementById("fuel-select4").style.display="none";
+
+               }
+
+           }
+            
+        }
+        secondeSelect.addEventListener("change", function (){
+        number_input()
+        });
+        function number_input() {
+            document.getElementById("myNumber").style.display="block";
+        }
+        secondeSelect.addEventListener("change", function (){
+        submit()
+        });
+        function submit() {
+            
+            document.getElementById("submit").style.display="block";
+        }
+        function calcule() {
+            let ss = secondeSelect.value;
+            let fs = firstSelect.value;
+            let price;
+            let jourNumber = document.getElementById("myNumber").value;
+            let Diesel = document.getElementById("Diesel")
+            let Essance = document.getElementById("Essance")
+            let Hybride = document.getElementById("Hybride")
+            let Electrique = document.getElementById("Electrique")
+            let finalMsg=document.getElementById('final-msg');
+            if (fs==='camion'){
+                price=250*1.19;
+                if(Diesel.checked)
+                {
+                price=price * jourNumber;
+                price= price  + price * 21/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Diesel";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                }
+            }
+            else if (fs==='moto'){
+                price=10;
+                if(Essance.checked)
+                {
+                price=price * jourNumber;
+                price=price + price * 14/100;
+                price=price.toFixed(2);
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Essance";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                }
+                else if(Electrique.checked)
+                {
+                    price=price * jourNumber;
+                    price=price + price * 5/100;
+                    document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Electrique";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                }
+            }
+            else if(fs==='engine'){
+                price=900;
+                if(Essance.checked)
+                {
+                price=price * jourNumber;
+                price=price + price * 14/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Essance";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                }
+                else if(Diesel.checked)
+                {
+                    price=price * jourNumber;
+                    price=price + price * 21/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Diesel";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                }
+            }
+            else{
+                    if(ss==="citroin C3")
+                {
+                    price=12;
+                    if(Essance.checked)
+                    {
+                    price=price * jourNumber;
+                    price=price + price * 14/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Essance";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }
+                    else if(Diesel.checked)
+                    {
+                        price=price * jourNumber;
+                        price=price + price * 21/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Diesel";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }
+                    else if(Electrique.checked)
+                    {
+                        price=price * jourNumber;
+                        price=price + price * 5/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Electrique";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }
+                    else if(Hybride.checked)
+                    {
+                    price=price * jourNumber;
+                    price=price + price * 9/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Hybride";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }
+                }
+                else if(ss==="sonata hybrid")
+                    {
+                        price=14;
+                        if(Essance.checked)
+                    {
+                    price=price * jourNumber;
+                    price=price + price * 14/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Essance";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }
+                    else if(Diesel.checked)
+                    {
+                        price=price * jourNumber;
+                        price=price + price * 21/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Diesel";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }
+                    else if(Hybride.checked)
+                    {
+                    price=price * jourNumber;
+                    price=price + price * 9/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Hybride";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }
+                        
+                    }
+                else if(ss==="Audi-A5")
+                    {
+
+                        price=20+20*19/100;
+                        if(Essance.checked)
+                    {
+                    price=price * jourNumber;
+                    price=price + price * 14/100 ;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Essance";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }
+                    else if(Diesel.checked)
+                    {
+                        price=price * jourNumber;
+                        price=price + price * 21/100;
+                        price=price.toFixed(2);
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Diesel";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }
+                    else if(Hybride.checked)
+                    {
+                    price=price * jourNumber;
+                    price=price + price * 9/100;
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Hybride";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+"days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+"€";
+                    }    
+                    }
+                else{
+                    price=16;
+                if(Diesel.checked)
+                {
+                    price=price * jourNumber;
+                    price=price+price*21/100;
+                    
+                document.getElementById('popup').style.display="block";
+                document.getElementById("fuel-choice").innerHTML="fuel type : Diesel";
+                document.getElementById("day-numbre").innerHTML="Duration : "+jourNumber+" days"
+                document.getElementById('final-msg').innerHTML="The price is :"+price+" €";
+                }
+                }
+
+            }
+        
+        }
+        
+        function hide() {
+            document.getElementById("popup").style.display="none";
+            
+        }
+    </script>
+
+    <script src="home.js"> </script>
+</body>
+
+</html>

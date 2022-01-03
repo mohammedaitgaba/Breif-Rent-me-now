@@ -1,0 +1,597 @@
+* {
+  margin: 0px;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.658),
+      rgba(110, 67, 67, 0.384)
+    ),
+    url("./pics/pexels-negative-space-97075.jpg");
+    background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+  width: 100vw;
+  padding: 2 13%;
+  background: #201f1f;
+  position: relative;
+  position: fixed;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  width: 15%;
+  cursor: pointer;
+  margin-top: 1%;
+}
+.nav_liste {
+  display: flex;
+  justify-content:space-around;
+  margin-right: 100%;
+  
+ 
+}
+.title{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.button button{
+  cursor: pointer;
+width: 100%;
+margin-top: 5%;
+padding: 15px 26px;
+border-radius: 99px;
+border: none;
+background: #8b2b2b;
+  color: white;
+font-weight: bold;
+transition: 0.4s;
+}
+.button button:hover{
+  background: white;
+  color: #8b2b2b;
+  transform: scale(1.1);
+}
+
+.nav_liste li {
+  display: inline-block;
+
+  margin-top: 10%;
+  margin-left: 5%;
+}
+.nav_liste li a {
+  text-decoration: none;
+  color: rgb(233, 233, 233);
+  font-size: 100%;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  padding: 7px 10%;
+  border-radius: 3px;
+  font-weight: bold;
+}
+a.active,
+.nav_liste a:hover {
+  border: 1px solid rgb(255, 255, 255);
+  transition: 0.4s;
+}
+.menu div {
+
+  display: flex;
+  justify-content: flex-end;
+  width: 20px;
+  height: 3px;
+  background-color: rgb(204, 84, 84);
+  margin: 3px;
+  margin-top: 20%;
+}
+.nav_{
+    display:  flex;
+    justify-content: center;
+}
+.h1{
+  color: rgb(233, 233, 233);
+  font-size: 50px;
+  
+}
+h2{
+  font-size: 20px;
+  text-align: center;
+}
+/* .h1 :hover{
+  font-style: italic;
+  color: brown;
+
+} */
+ .menu {
+  display: none;
+} 
+
+.nav_liste :hover{
+    color: #8b2b2b;
+    
+}
+.vehicles{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  margin-top: 10%;
+  
+}
+.cliens-section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content:space-around;
+  margin-top: 3%;
+  
+}
+.paragraphs
+{
+  display: flex;
+  justify-content: space-evenly;
+  width: 90vw;
+  margin-top: 3%;
+  margin-left: 4%;
+
+}
+.big-titles
+{
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cliens
+{
+  margin-top: 7%;
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+}
+.images  {
+  
+  text-align: center;
+  margin-top: -4%;
+  display: flex;
+  width: 100%;
+  justify-content:space-evenly;
+  height: 35vh;
+  align-items: center;
+  
+}
+
+.users-images {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    justify-content:space-evenly;
+    
+  } 
+
+  .images img {
+    /* box-shadow: 0 4px 8px 0 rgba(221, 56, 56, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-radius: 6%;
+    width: 300px;
+    height: 250px;
+    transition: 0.4s;
+  }
+  .images :hover{
+    transform: scale(1.05);
+  }
+  
+  .users-images img{
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 6%;
+    width: 250px;
+    height: 200px;
+    transition: 0.4s;
+
+  }
+  
+  .space
+  {
+    
+    margin-left: 4%;
+    margin-right: 4%;
+    background-image: linear-gradient(
+      rgba(114, 43, 43, 0.658),
+      rgba(0, 0, 0, 0.384)
+    ),
+    url("./pics/pexels-negative-space-7075.jpg");
+   border-radius: 10%;
+  }
+  .space2
+  {
+    margin-left: 4%;
+    margin-right: 4%;
+    background-image: linear-gradient(
+      rgba(114, 43, 43, 0.658),
+      rgba(0, 0, 0, 0.384)
+    ),
+    url("./pics/pexels-negative-space-7075.jpg");
+   border-radius: 10%;
+  }
+  .space :hover{
+    transform: scale(1.1);
+    
+    
+
+  }
+  .space img{
+    
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .space2 :hover{
+    transform: scale(1.1);
+    
+
+  }
+  .space2 img{
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .client-text{
+    background-color: rgb(255, 255, 255);
+
+  }
+  .users-images div
+  {
+    width: 50vw;
+    height: 60%;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+  }
+  .blog{
+    
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.658),
+      rgba(110, 67, 67, 0.384)
+    ),
+    url("./pics/qq.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-evenly;
+    
+    width: 100vw;
+    height: 80vh;
+    margin-top: 10%;
+  }
+  .blog-text{
+    margin-top: 4%;
+    color:rgb(233, 233, 233); 
+  }
+.blog-img{
+  color: rgb(0, 0, 0); 
+  display: flex;
+  
+  justify-content:space-between;
+  
+}
+
+.blog-img div{
+  margin:0 25px;
+  text-align: center;
+}
+
+.blog-img img {
+  display: flex ;
+  justify-content: space-evenly;
+  /* box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 6%; */
+  width: 300px;
+  height: 250px;
+  /* padding: 12px;
+  padding-bottom: 10%; */
+  
+  }
+  .paragraph-back{
+    background-color: rgb(233, 233, 233);
+    
+  }
+  .happy{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    height: 50vh;
+  }
+  .users{
+    text-align: center;
+    display: flex;
+    margin-top: 8%;
+    margin-left: 11%;
+    justify-content: space-evenly;
+  }
+  .users img{
+    width: 40%;
+    justify-content: space-evenly;
+    
+  }
+  .backgound-users
+  {
+    
+    background-color: rgb(204, 84, 84);
+    
+  }
+  .backgound-user
+
+  {
+    background-color: rgb(255, 255, 255);
+    
+  }
+  body{
+    overflow-x: hidden;
+  }
+  footer{
+    margin-top: 5%;
+    
+    background:#F4F9F9;
+   
+  }
+  footer div
+  {
+    
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .img-ftr{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50%;
+    margin-bottom: 1%;
+    margin-right: 0%;
+  }
+  .img-ftr img {
+    width: 40%;
+    transition: 0.4s;
+    /* height: 50px; */
+  }
+  .img-ftr a :hover{
+  transform: scale(1.3);
+  }
+  .ftr-container{
+    display: flex;
+  }
+  .text-ftr{
+    margin-left: 3%;
+    justify-content: space-between;
+    color: rgb(0, 0, 0);
+  }
+  .brr{
+    margin-left: 3%;
+    
+  }
+  .inline div{
+    display: flex;
+    flex-direction:column;
+  }
+  .inline2 div{
+    display: flex;
+    flex-direction:column;
+  }
+
+@media screen and  (max-width :768PX ) 
+{
+ .nav_liste {
+   width: 80%;
+   font-size: 80%;
+  }
+ }
+  
+@media screen and  (max-width :768PX ) 
+{
+      body{
+          overflow-x:hidden ;
+      }
+    .header{
+      position: fixed;
+        }
+      .nav_liste a:hover {
+        border: none;
+      }
+      .nav_liste {
+
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        background: #201f1f;
+        font-size: 120%;
+        position: absolute;
+        left: 50%;
+        width: 50%;
+        height: 50vh;
+        top: 10vh;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        position: fixed;
+
+      }
+      .nav_liste :hover{
+        color: rgb(165, 37, 37);
+      }
+      /* .nav_liste li{
+        opacity: 0; */
+      
+      .nav-active{
+        transform:translateX(0%) ;
+      }
+      .logo{
+        /* margin: auto; */
+        width: 25%;
+      
+      }
+      .menu{
+        display: block;
+        margin-right: 5%;
+        margin-top: 2%;
+        cursor: pointer;
+      }
+      .h1{
+        margin-top: 25%;
+        font-size: 30px;
+      
+      }
+      .big-titles
+      {
+        font-size: 20px;
+        margin-bottom:5%
+      }
+      .vehicles{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100%;
+      }
+      .images  {
+      
+        text-align: center;
+        margin-top: 15%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content:space-evenly;
+        height: 100vh;
+        align-items: center;}
+
+      .cliens-section{
+          display: flex;
+          flex-direction: column;
+          margin-top: 0%;
+          
+        }
+        .cliens
+    {
+      margin-top:15%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .users-images {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 10%;
+      margin-bottom: 0%;
+      margin-left: 0%;
+      width: 100vw;
+      justify-content:space-evenly;
+      height: 100%;
+      align-items: center;} 
+
+    
+    .blog-img{
+      color: rgb(0, 0, 0); 
+      display: flex;
+      flex-direction: column;
+      justify-content:space-between;
+      margin-top: 0%;
+      
+    }
+    .blog-img div{
+      margin-top: 8%;
+    }
+ 
+    .blog{
+    
+      background-image: linear-gradient(
+        rgba(0, 0, 0, 0.658),
+        rgba(110, 67, 67, 0.384)
+      ),
+      url("./pics/qq.jpeg");
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content: space-evenly;
+      
+      width: 100vw;
+      height: 140vh;
+      margin-top: 10%;
+    }
+
+    
+    .space{
+      display: flex;
+      flex-direction: column;
+      width: 10vw;
+      height: 25%;
+      
+    }
+    .space img{
+      width: 40%;
+
+    }
+    .space2{
+      display: flex;
+      flex-direction: column;
+      width: 10vw;
+      height: 25%;
+    }
+    .space2 img{
+      width: 40%;
+
+    }
+    .users-images div{
+      width: 90vw;
+      height: 40%;
+      display: flex;
+      /* flex-direction: column; */
+      align-items: center;
+      margin-top: 5%;
+    }
+    .img-ftr{
+      width: 100%;
+      margin-left: 5%;
+    }
+   
+  }   
+/* @media screen and  (max-width :370PX ){
+  .menu{
+    display: block;
+    margin-right: 5%;
+    margin-top: 2%;
+    cursor: pointer;
+  }
+} */
