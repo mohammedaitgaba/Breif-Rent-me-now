@@ -322,5 +322,13 @@
       #ok-button button{
         margin-left: 20%;
       }
+      .img-ftr img {
+        width: 5vw;
+        /* height: 50px; */
+        
+      }
+      .img-ftr{
+        margin-left: 30%;
+      }
   }
 
