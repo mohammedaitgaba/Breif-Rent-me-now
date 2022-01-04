@@ -301,6 +301,9 @@ h3{
         .h3{
           font-size: 14px;
         }
+        form{
+          width: 80vw;
+        }
 
       
     }
@@ -521,8 +524,9 @@ h3{
         flex-direction: column;
       }
       form{
+        margin-left: -10%;
         margin-top: 0%;
-        width: 90%;
+        width: 70vw;
         height: 50vh;
       }
       .hidden-img img{

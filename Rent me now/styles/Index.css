@@ -15,7 +15,7 @@
       rgba(0, 0, 0, 0.658),
       rgba(110, 67, 67, 0.384)
     ),
-    url("./pics/pexels-negative-space-97075.jpg");
+    url("./pexels-negative-space-97075.jpg");
     background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -277,7 +277,7 @@ h2{
       rgba(0, 0, 0, 0.658),
       rgba(110, 67, 67, 0.384)
     ),
-    url("./pics/qq.jpeg");
+    url("./qq.jpeg");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -533,11 +533,6 @@ h2{
  
     .blog{
     
-      background-image: linear-gradient(
-        rgba(0, 0, 0, 0.658),
-        rgba(110, 67, 67, 0.384)
-      ),
-      url("./pics/qq.jpeg");
       background-attachment: fixed;
       background-position: center;
       background-size: cover;
